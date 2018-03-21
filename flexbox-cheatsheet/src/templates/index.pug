@@ -1,0 +1,108 @@
+extends layouts/main.pug
+
+block vars
+	- var lang = 'es'
+	- var template = 'tpl__home'
+	- var page = 'home'
+	- var pageTitle = 'New experiment'
+
+
+block main
+	h2 flex container
+
+	article.wrapper
+
+		.list-flex
+			p DISPLAY
+
+		.list-flex
+			p FLEX DIRECTION
+
+
+		.list-flex
+			p JUSTIFY CONTENT
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p center
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p flex-end
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p stretch
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p baseline
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p space-between
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p space-around
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p space-evenly
+
+
+
+		.list-flex
+			p ALIGN ITEMS
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p center
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p flex-end
+			.list-flex__item
+				ol.list-childs
+					li
+					li
+					li
+					li
+				div.info
+					p flex-star

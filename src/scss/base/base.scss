@@ -1,0 +1,138 @@
+$coke-debug-boxing: true;
+$gutter: $coke-gutter;
+$line-height: $coke-font-size * $coke-line-height;
+
+* {
+	// @include debugger();
+}
+
+body {
+	font-family: 'Helvetica';
+	font-size: 14px;
+	padding: $gutter;
+}
+
+ol,
+ul {
+	margin: 0;
+	list-style: none;
+}
+
+p {
+	width: 100%;
+	text-align: left;
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-start;
+}
+
+.list-flex {
+	width: 200px;
+	margin: $gutter;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	&__item {
+		display: flex;
+		width: 100%;
+		height: 70px;
+		padding: ($gutter / 2 );
+
+		.list-childs {
+			flex: 1 1 60px;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+
+			& + .info {
+				flex: 1 1 50%;
+				margin-left: 5px;
+			}
+		}
+
+		&:nth-child(0) .list-childs {
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		&:nth-child(1) .list-childs {
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		&:nth-child(2) .list-childs {
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		&:nth-child(3) .list-childs {
+			justify-content: flex-start;
+			align-items: flex-end;
+		}
+
+		&:nth-child(4) .list-childs {
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		&:nth-child(5) .list-childs {
+			justify-content: flex-end;
+			align-items: flex-start;
+		}
+
+		&:nth-child(6) .list-childs {
+			justify-content: flex-end;
+			align-items: stretch;
+		}
+
+		&:nth-child(7) .list-childs {
+			justify-content: flex-end;
+		}
+
+		&:nth-child(8) .list-childs {
+			justify-content: space-between;
+		}
+
+		&:nth-child(9) .list-childs {
+			justify-content: space-around;
+		}
+
+		&:nth-child(10) .list-childs {
+			justify-content: space-evenly;
+		}
+	}
+}
+
+.list-childs {
+	position: relative;
+	border: 1px solid #dcdcdc;
+	border-radius: 2px;
+
+	li {
+		@include share(min-width, min-height, 10px);
+		border: 1px solid darken(orange, 50%);
+		background: orange;
+		border-radius: 2px;
+	}
+
+	&:before {
+		$size: 0.5rem;
+		content: 'JC';
+		color: #dcdcdc;
+		@include share(font-size, line-height, height, 0.5rem);
+		@include absolute(top $size * (-1) right);
+	}
+
+	&:after {
+		$size: 0.5rem;
+		content: 'AI';
+		color: #dcdcdc;
+		@include share(font-size, line-height, height, 0.5rem);
+		@include absolute(bottom 0.8rem * (-1) left);
+	}
+}
